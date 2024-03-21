@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Metropolis";
+  src: url("../../assets/fonts/Metropolis-Regular.otf");
+}
+.container {
+  flex: 1;
+  background-color: #ffffff;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100px;
+  width: calc((395 / 1440) * 100vw);
+  flex-direction: column;
+}
+.infoitem {
+  position: flex;
+  /* z-index: 2; */
+  width: 100%;
+  margin-left: 20%;
+}
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: calc((20 / 1440) * 100vw);
+  margin-top: calc((20 / 1440) * 100vw);
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  /* margin-top: 10px; */
+  align-items: center;
+  cursor: pointer;
+  /* vertical-align: middle; */
+}
+.containerimage {
+  height: calc((60.55 / 1440) * 100vw);
+  width: calc((60.55 / 1440) * 100vw);
+  border-radius: calc((30 / 1440) * 100vw);
+  overflow: hidden;
+}
+.image {
+  height: auto;
+  width: calc((60.55 / 1440) * 100vw);
+}
+.name {
+  color: #222222;
+  font-family: "Metropolis";
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: calc((10 / 1440) * 100vw);
+  margin-top: calc((15 / 1440) * 100vw);
+}
+.nameinfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.edit {
+  color: #9b9b9b;
+  padding-left: calc((10 / 1440) * 100vw);
+  margin-top: 0px;
+  cursor: pointer;
+}
+.active {
+  color: #222222;
+  font-family: "Metropolis";
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 10px;
+  margin-top: calc((15 / 1440) * 100vw);
+}
+.inactive {
+  color: #9b9b9b;
+  font-family: "Metropolis";
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: calc((10 / 1440) * 100vw);
+  margin-top: calc((15 / 1440) * 100vw);
+}
+.containerArrow {
+  text-align: right;
+  padding-right: calc((30 / 1440) * 100vw);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: calc((70 / 1440) * 100vw);
+  font-size: calc((14 / 1440) * 100vw);
+  align-items: center;
+  margin-top: calc((10 / 1440) * 100vw);
+  padding-right: calc((50 / 1440) * 100vw);
+}
+.btnsave {
+  background: #db3022;
+  border-radius: calc((25 / 1440) * 100vw);
+  width: calc((120 / 1440) * 100vw);
+  height: calc((36 / 1440) * 100vw);
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Metropolis";
+  font-weight: 500;
+  font-size: calc((14 / 1440) * 100vw);
+  line-height: calc((20 / 1440) * 100vw);
+  margin-top: calc((120 / 1440) * 100vw);
+}

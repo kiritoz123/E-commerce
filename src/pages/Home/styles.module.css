@@ -1,0 +1,21 @@
+.home {
+	padding-top: 147px;
+	padding-bottom: 97px;
+	padding-left: calc(0.1 * 100vw);
+	padding-right: calc(0.1 * 100vw);
+}
+
+.carousel {
+	border-radius: 8px;
+	background: none;
+	width: 100%;
+	height: 100%;
+}
+
+.marginbottom30 {
+	margin-bottom: 3rem;
+}
+
+.marginbottom50 {
+	margin-bottom: 5rem;
+}

@@ -1,0 +1,44 @@
+.category {
+	padding: 15rem 15rem 3.6rem 15rem;
+	width: 100%;
+}
+
+.nav {
+	display: flex;
+	flex-direction: row;
+}
+
+.nav a {
+	margin-right: 1rem;
+}
+
+.ul {
+	display: flex;
+	flex-direction: row;
+	width: 196px;
+	justify-content: flex-start;
+	list-style: none;
+	padding: 0;
+}
+
+.ul li {
+	margin-right: 0.5rem;
+	align-self: center;
+}
+.ul a {
+	margin-left: 0.5rem;
+}
+
+.ul p {
+	margin: 0;
+	margin-left: 0.5rem;
+}
+
+.title {
+	margin-top: 5rem;
+	margin-bottom: 0;
+}
+
+.mt25 {
+	margin-top: 2.5rem;
+}

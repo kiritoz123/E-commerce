@@ -1,0 +1,28 @@
+.carousel .slide {
+	background: none;
+	border-radius: 8px;
+}
+
+.container {
+	border-radius: 8px;
+}
+
+.slick-arrow {
+	display: none;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	display: none;
+	font-family: "slick";
+	font-size: 20px;
+	line-height: 1;
+	opacity: 0.75;
+	color: white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.slick-list {
+	border-radius: 8px;
+}

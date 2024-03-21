@@ -1,0 +1,44 @@
+.container-modal {
+   /* padding-left: 5rem;
+   padding-right: 5rem;
+   padding-bottom: 5rem; */
+   padding: 5rem;
+   padding-top: 0px;
+}
+
+.text-top {
+   /* font-family: Metropolis; */
+   font-size: 28px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 28px;
+   letter-spacing: 0em;
+   text-align: center;
+}
+
+.no-border {
+   border: none;
+}
+
+.close {
+   font-size: 4rem;
+}
+
+.add-address {
+   border: 1px dashed #9B9B9B;
+   border-radius: 8px;
+   text-align: center;
+   padding: 3.4rem;
+   margin-top: 3rem;
+   margin-bottom: 3.4rem;
+}
+
+.text-add-addres {
+   font-size: 1.8rem;
+}
+
+.container-address-list {
+   border: 1px solid #DB3022;
+   border-radius: 8px;
+   padding: 3rem;
+}

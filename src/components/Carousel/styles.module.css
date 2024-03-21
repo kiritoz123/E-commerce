@@ -1,0 +1,136 @@
+.previewlItem {
+	width: 45.6rem;
+	height: 18rem;
+	border-radius: 8px;
+	position: relative;
+	/* display: table; */
+}
+
+.previewImg {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.categoryItem {
+	width: 20.6rem;
+	height: 22rem;
+	border-radius: 8px;
+	position: relative;
+	/* margin: auto; */
+	/* padding: auto; */
+}
+
+.categoryImg {
+	width: 71%;
+	height: 77%;
+	max-height: 14.6rem;
+	max-width: 16.9rem;
+	object-fit: contain;
+	margin: auto;
+	bottom: 15%;
+	left: 15%;
+	position: absolute;
+}
+
+.legendText {
+	align-self: center;
+	font-weight: bold;
+	color: white;
+	width: 90%;
+	text-align: center;
+	top: 50%;
+	left: 32%;
+	/* make sure padding and margin do not disturb the calculation of the center point */
+	padding: 0;
+	margin: auto;
+	/* using centers for the transform */
+	transform-origin: center center;
+	/* calling calc() function for the calculation to move left and up the element from the center point */
+	transform: translateX(calc((100% / 2) * (-0.6)))
+		translateY(calc((100% / 2) * (-1)));
+	position: absolute;
+}
+
+.arrowRight {
+	width: 5.2rem;
+	height: 5.2rem;
+	border-radius: 50%;
+	z-index: 10;
+	align-self: center;
+	margin-right: 58px;
+	/* box-shadow: 0px 4px 10px rgba(181, 181, 181, 0.25); */
+}
+
+.arrowLeft {
+	width: 5.2rem;
+	height: 5.2rem;
+	border-radius: 50%;
+	z-index: 10;
+	align-self: center;
+	margin-left: 58px;
+	/* box-shadow: 0px 4px 10px rgba(181, 181, 181, 0.25); */
+}
+
+.arrowImg {
+	width: 5.2rem;
+	height: 5.2rem;
+	object-fit: contain;
+	margin: auto;
+	align-self: center;
+	opacity: 0.95;
+	/* box-shadow: 0px 4px 10px rgba(181, 181, 181, 0.25); */
+}
+
+.red {
+	background-color: #cc0b04;
+}
+
+.blue {
+	background-color: #1c3391;
+}
+.orange {
+	background-color: #f67b02;
+}
+.green {
+	background-color: #57cd9e;
+}
+.pink {
+	background-color: #e31f51;
+}
+
+.darkblue {
+	background-color: #5650d8;
+}
+
+.yellowishgreen {
+	background-color: #b5d850;
+}
+.teal {
+	background-color: #50c8d8;
+}
+.purple {
+	background-color: #ac50d8;
+}
+.lightpink {
+	background-color: #d85089;
+}
+.brightblue {
+	background-color: #5086d8;
+}
+.lightgreen {
+	background-color: #53d850;
+}
+.gold {
+	background-color: #d8ba50;
+}
+.lightpurple {
+	background-color: #d85091;
+}
+.tosca {
+	background-color: #50d8af;
+}
+.lightred {
+	background-color: #d85050;
+}

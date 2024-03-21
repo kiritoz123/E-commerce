@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 0px 10px 10px rgba(173, 173, 173, 0.25);
+  flex-direction: row;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  background-color: #fff;
+}
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 2;
+  margin-right: 15px;
+}
+.logo {
+  width: auto;
+  height: 44px;
+}
+.logotext {
+  padding-top: 10px;
+  padding-left: 3px;
+  font-family: "Metropolis Bold";
+  font-weight: 700;
+  font-size: 24px;
+  vertical-align: middle;
+  color: #db3022;
+  /* line-height: 20px; */
+}
+.search {
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+  flex: 4;
+}
+.search input {
+  border-radius: 10px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid #8e8e93;
+  padding: 10px;
+}
+.search i {
+  position: absolute;
+  margin-top: 6px;
+  margin-left: -25px;
+  color: #8e8e93;
+}
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+.filter-container img {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #8e8e93;
+  text-align: center;
+  padding: 5px;
+  border-radius: 9px;
+  color: #8e8e93;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border: none;
+}
+.menu-item {
+  margin-right: 5%;
+  color: #8e8e93;
+  border: none;
+}
+.menu-item img {
+  width: 23px;
+}
+.profile {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile img {
+  border-radius: 30px;
+  width: 30px;
+}
