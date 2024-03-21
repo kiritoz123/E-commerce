@@ -51,11 +51,11 @@ const ModalSelectPayment = (props) => {
                </div>
                <div className="row align-items-center container-item-summary">
                   <h4 className={classname(colors.grayText, text.text)}>Order</h4>
-                  <h3 className="ml-auto text-price">{`${props.cart.reduce((total, item) => { return total + (item.price * item.qty) }, 0).toLocaleString('id-ID')}VND`}</h3>
+                  <h3 className="ml-auto text-price">{`Rp${props.cart.reduce((total, item) => { return total + (item.price * item.qty) }, 0).toLocaleString('id-ID')}`}</h3>
                </div>
                <div className="row align-items-center container-item-summary">
                   <h4 className={classname(colors.grayText, text.text)}>Delivery</h4>
-                  <h3 className="ml-auto text-price">5.000VND</h3>
+                  <h3 className="ml-auto text-price">Rp5.000</h3>
                </div>
             </div>
          </Modal.Body>
@@ -64,7 +64,7 @@ const ModalSelectPayment = (props) => {
                <div className="row">
                   <div className="col">
                      <h4 className={classname(colors.blackText, "text-title-head")}>Shopping summary</h4>
-                     <h3 className={classname(colors.primaryText, "text-price")}>{`${props.cart.reduce((total, item) => { return total + (item.price * item.qty) }, 5000).toLocaleString('id-ID')}VND`}</h3>
+                     <h3 className={classname(colors.primaryText, "text-price")}>{`Rp${props.cart.reduce((total, item) => { return total + (item.price * item.qty) }, 5000).toLocaleString('id-ID')}`}</h3>
                   </div>
                   <div className="col-5 align-self-center">
                      <button className={classname("btn btn-danger btn-buy", colors.primary)} onClick={props.onSubmit}>Buy</button>

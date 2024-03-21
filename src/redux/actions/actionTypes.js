@@ -10,6 +10,7 @@ export const AUTH_CLEAR_STATE = 'authClearState'
 export const FETCH_ALL_PRODUCT = "fetchAllProduct";
 export const GET_PRODUCT_BY_ID = "getProductById";
 export const GET_PRODUCT_BY_SELLER_ID = "getProductBySellerId";
+export const GET_PRODUCT_BY_ADMIN_ID = "getProductByAdminId";
 
 export const INSERT_TRANSACTION = "insertTransaction";
 

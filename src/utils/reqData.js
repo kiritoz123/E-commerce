@@ -8,7 +8,9 @@ export const authLoginCustomer = (data) => {
 export const authLoginSeller = (data) => {
   return Axios.post(`${API_URL}/auth/login/seller`, data);
 };
-
+export const authLoginAdmin = (data) => {
+  return Axios.post(`${API_URL}/auth/login/admin`, data);
+};
 export const authRegisterCustomer = (data) => {
   return Axios.post(`${API_URL}/auth/register/customer`, data);
 };
@@ -76,7 +78,9 @@ export const getProductById = (id) => {
 export const getProductBySellerId = (id) => {
   return Axios.get(`${API_URL}/product/seller/${id}`);
 };
-
+export const getProductByAdminId = (id) => {
+  return Axios.get(`${API_URL}/product/admin/${id}`);
+};
 export const syncFromServer = (id) => {
   return Axios.get(`${API_URL}/chat/${id}`);
 };
@@ -114,7 +118,9 @@ export const getOrderCustomer = (id) => {
 export const getOrderSeller = (id) => {
   return Axios.get(`${API_URL}/order/seller/${id}`);
 };
-
+export const getOrderAdmin = (id) => {
+  return Axios.get(`${API_URL}/order/admin/${id}`);
+};
 export const resetPasswordSeller = (data) => {
   return Axios.post(`http://localhost:8000/auth/resetpassseller`, data);
 };

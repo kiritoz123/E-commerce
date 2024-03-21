@@ -69,7 +69,7 @@ const Card = (props) => {
 						{props.name}
 					</h5>
 					<p className={classname(text.text, styles.price)}>
-						{Number(props.price).toLocaleString("id-ID")}VND
+						Rp{Number(props.price).toLocaleString("id-ID")}
 					</p>
 					<p className={classname(text.helperText, styles.category)}>
 						{props.seller_name}

@@ -1,9 +1,11 @@
 import * as actions from "../actions/actionTypes";
 import {
+  getProductByAdminIdCreator,
   getProductBySellerIdCreator,
   addProductCreator,
   getOrderCustomerCreator,
   getOrderSellerCreator,
+  getOrderAdminCreator,
 } from "../actions/product";
 
 // let invoice = Math.floor(Math.random() * 100001) + 1;
@@ -33,6 +35,13 @@ const initialState = {
   isGetProdBySelIdFulFilled: false,
   isGetProdBySelIdRejected: false,
 
+  statusGetProdByAdminId: null,
+  dataGetProdByAdminId: null,
+  errorGetProdByAdminId: undefined,
+  isGetProdByAdminIdPending: false,
+  isGetProdByAdminIdFulFilled: false,
+  isGetProdByAdminIdRejected: false,
+
   statusAddProd: null,
   dataAddProd: null,
   errorAddProd: undefined,
@@ -53,6 +62,13 @@ const initialState = {
   isGetOrderSellPending: false,
   isGetOrderSellFulFilled: false,
   isGetOrderSellRejected: false,
+
+  statusGetOrderAdmin: null,
+  dataGetOrderAdmin: null,
+  errorGetOrderAdmin: undefined,
+  isGetOrderAdminPending: false,
+  isGetOrderAdminFulFilled: false,
+  isGetOrderAdminRejected: false,
 };
 
 const productReducer = (state = initialState, { type, payload }) => {
@@ -260,7 +276,43 @@ const productReducer = (state = initialState, { type, payload }) => {
         isGetProdBySelIdPending: false,
         isGetProdBySelIdFulFilled: false,
       };
-
+    case String(getProductByAdminIdCreator.pending):
+        return {
+          ...state,
+          isGetProdByAdminIdPending: true,
+        };
+    case String(getProductByAdminIdCreator.fulfilled): {
+        let status;
+        let err;
+        let data;
+        if (payload.status === 200) {
+          status = 200;
+          err = undefined;
+          data = payload.data;
+        } else {
+          status = 500;
+          err = payload.error;
+          data = [];
+        }
+        return {
+          ...state,
+          statusGetProdByAdminId: status,
+          dataGetProdByAdminId: data,
+          errorGetProdByAdminId: err,
+          isGetProdByAdminIdPending: false,
+          isGetProdByAdminIdFulFilled: true,
+          isGetProdByAdminIdRejected: false,
+        };
+      }
+    case String(getProductByAdminIdCreator.rejected):
+        return {
+          ...state,
+          statusGetProdByAdminId: 500,
+          errorGetProdByAdminId: payload,
+          isGetProdByAdminIdRejected: true,
+          isGetProdByAdminIdPending: false,
+          isGetProdByAdminIdFulFilled: false,
+        };
     case String(addProductCreator.pending):
       return {
         ...state,
@@ -366,14 +418,51 @@ const productReducer = (state = initialState, { type, payload }) => {
         isGetOrderSellRejected: false,
       };
     }
+    case String(getOrderAdminCreator.pending):
+      return {
+        ...state,
+        isGetOrderAdminPending: true,
+      };
+    case String(getOrderAdminCreator.fulfilled): {
+      let status;
+      let err;
+      let data;
+      if (payload.status === 200) {
+        status = 200;
+        err = undefined;
+        data = payload.data;
+      } else {
+        status = 500;
+        err = payload.error;
+        data = null;
+      }
+      return {
+        ...state,
+        statusGetOrderAdmin: status,
+        dataGetOrderAdmin: data,
+        errorGetOrderAdmin: err,
+        isGetOrderAdminPending: false,
+        isGetOrderAdminFulFilled: true,
+        isGetOrderAdminRejected: false,
+      };
+    }
     case String(getOrderSellerCreator.rejected):
       return {
         ...state,
-        statusGetOrderSell: 500,
-        errorGetOrderSell: payload,
-        isGetOrderSellRejected: true,
-        isGetOrderSellPending: false,
-        isGetOrderSellFulFilled: false,
+        statusGetOrderAdmin: 500,
+        errorGetOrderAdmin: payload,
+        isGetOrderAdminRejected: true,
+        isGetOrderAdminPending: false,
+        isGetOrderAdminFulFilled: false,
+      };
+    case String(getOrderAdminCreator.rejected):
+      return {
+        ...state,
+        statusGetOrderAdmin: 500,
+        errorGetOrderAdmin: payload,
+        isGetOrderAdminRejected: true,
+        isGetOrderAdminPending: false,
+        isGetOrderAdminFulFilled: false,
       };
     case "RESET_STATUS_PRODUCT":
       return {

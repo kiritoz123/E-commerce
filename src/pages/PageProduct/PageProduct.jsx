@@ -201,10 +201,10 @@ const PageProduct = (props) => {
 									marginTop: 10,
 								}}
 							>
-								
+								Rp
 								{Number(
 									stateProductDetail.price
-								).toLocaleString("id-ID")} VND
+								).toLocaleString("id-ID")}
 							</p>
 							<p
 								style={{
