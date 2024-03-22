@@ -6,10 +6,10 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login";
 import RegisterCustomer from "./pages/Auth/RegisterCustomer";
 import RegisterSeller from "./pages/Auth/RegisterSeller";
-
 import Chat from "./pages/Chat/Chat";
 import Profile from "./pages/Profile";
 import ProfileSeller from "./pages/ProfileSeller";
+import ProfileAdmin from  "./pages/ProfileAdmin";
 import ProductDetail from "./pages/PageProduct/PageProduct";
 import Category from "./pages/Category/Category";
 import Search from "./pages/Search/Search";
@@ -27,7 +27,6 @@ function App() {
 			<Router>
 				<Switch>
 					<PublicRoute path="/login" exact component={Login} />
-					
 					<PublicRoute path="/RegisterCustomer" exact component={RegisterCustomer} />
 					<PublicRoute path="/RegisterSeller" exact component={RegisterSeller} />
 					<PublicRoute path="/EmailInput" exact component={EmailInput} />
@@ -60,6 +59,13 @@ function App() {
 						path="/profileseller"
 						component={ProfileSeller}
 					/>
+					<PrivateRoute
+						exact
+						enableNavbar={true}
+						redirectPath="/login"
+						path="/profileAdmin"
+						component={ProfileAdmin}
+					/>
 					<PublicRoute
 						exact
 						enableNavbar={true}
@@ -78,9 +84,10 @@ function App() {
 						path="/mybag"
 						component={MyBag}
 					/>
-					<PublicRoute
+					<PrivateRoute
 						exact
 						enableNavbar={true}
+						redirectPath="/login"
 						path="/checkout"
 						component={Checkout}
 					/>

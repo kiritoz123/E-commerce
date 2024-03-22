@@ -43,7 +43,6 @@ const Login = (props) => {
                         alt="logo"
                         className={classname(styles.logo)}
                         src={corpName}
-                        onClick={() => props.history.push('/')}
                     />
                     <p className={classname(styles.desc)}>
                         Please sign up with your seller account

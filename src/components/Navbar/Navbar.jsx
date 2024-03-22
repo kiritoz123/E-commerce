@@ -16,9 +16,8 @@ import userDefault from "../../assets/img/default.png";
 import { API_URL } from "../../utils/environment";
 
 const Navbar = (props) => {
-	const { user, isLogin } = useSelector((state) => state.auth);
+	const { status, user, isLogin } = useSelector((state) => state.auth);
 	const inputRef = React.useRef();
-
 	const onKeyPressHandler = (event) => {
 		if (event.key === "Enter") {
 			props.history.push(`/search?name=${inputRef.current.value}`);
@@ -46,17 +45,15 @@ const Navbar = (props) => {
 				/>
 			</div>
 			<div className="d-flex flex-row justify-content-around">
-				{user.user_type !== "Seller" && (
-					<Img
-						key="cart"
-						source={cart}
-						containerStyle={styles.cart}
-						imgStyle={styles.cartImg}
-						onClickProp={() => {
-							props.history.push("/mybag");
-						}}
-					/>
-				)}
+				<Img
+					key="cart"
+					source={cart}
+					containerStyle={styles.cart}
+					imgStyle={styles.cartImg}
+					onClickProp={() => {
+						props.history.push("/mybag");
+					}}
+				/>
 				{isLogin && user.token ? (
 					<nav className={styles.navList}>
 						<Img
@@ -74,6 +71,17 @@ const Navbar = (props) => {
 								props.history.push("/chat");
 							}}
 						/>
+						{/* <Img
+							key="profile"
+							source={
+								user.avatar ? require(user.avatar) : userDefault
+							}
+							containerStyle={styles.profile}
+							imgStyle={styles.profileImg}
+							onClickProp={() => {
+								props.history.push("/profile");
+							}}
+						/> */}
 						{user.avatar ? (
 							<Img
 								key="profile"
@@ -83,7 +91,7 @@ const Navbar = (props) => {
 								onClickProp={() => {
 									user.user_type === "Seller"
 										? props.history.push("/profileseller")
-										: props.history.push("/profile");
+										: (user.user_type === "Admin"? props.history.push("/profileAdmin") : props.history.push("/profile"));
 								}}
 							/>
 						) : (
@@ -95,7 +103,7 @@ const Navbar = (props) => {
 								onClickProp={() => {
 									user.user_type === "Seller"
 										? props.history.push("/profileseller")
-										: props.history.push("/profile");
+										: (user.user_type === "Admin"? props.history.push("/profileAdmin") : props.history.push("/profile"));
 								}}
 							/>
 						)}
@@ -132,5 +140,7 @@ const Navbar = (props) => {
 		</header>
 	);
 };
+
+Navbar.propTypes = {};
 
 export default Navbar;

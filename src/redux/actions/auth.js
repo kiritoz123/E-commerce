@@ -3,6 +3,7 @@ import { createAsyncAction } from "redux-promise-middleware-actions";
 import {
   authLoginCustomer,
   authLoginSeller,
+  authLoginAdmin,
   authRegisterCustomer,
   authRegisterSeller,
   updateProfileCustomer,
@@ -24,6 +25,12 @@ export const authLoginSellerCreator = (data) => {
   return {
     type: actions.AUTH_LOGIN_USER,
     payload: authLoginSeller(data),
+  };
+};
+export const authLoginAdminCreator = (data) => {
+  return {
+    type: actions.AUTH_LOGIN_USER,
+    payload: authLoginAdmin(data),
   };
 };
 export const authRegisterCustomerCreator = (data) => {

@@ -30,6 +30,13 @@ export const getProductBySellerIdCreator = createAsyncAction(
     return res.data;
   }
 );
+export const getProductByAdminIdCreator = createAsyncAction(
+  "GETPRODUCT_BY_ADMIN_ID",
+  async (id) => {
+    const res = await api.getProductByAdminId(id);
+    return res.data;
+  }
+);
 // export const addToCart = (id, name, brand, qty, price, images) => {
 //    return {
 //       type: actions.ADD_TO_CART,
@@ -124,7 +131,13 @@ export const getOrderSellerCreator = createAsyncAction(
     return res.data;
   }
 );
-
+export const getOrderAdminCreator = createAsyncAction(
+  "GET_ORDER_ADMIN",
+  async (id) => {
+    const res = await api.getOrderAdmin(id);
+    return res.data;
+  }
+);
 export const resetStatusProduct = () => {
   return {
     type: "RESET_STATUS_PRODUCT",

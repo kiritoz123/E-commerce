@@ -54,7 +54,6 @@ const ResetPasswordSeller = ({ location, history }) => {
                         alt="logo"
                         className={classname(styles.logo)}
                         src={corpName}
-                        
                     />
                     <p className={classname(styles.desc)}>
                         Reset password for seller
