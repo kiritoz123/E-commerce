@@ -87,7 +87,7 @@ const MyBag = () => {
 		const sendData = {
 			id: invoice,
 			customer_id: stateAuth.id,
-			// "customer_id": 1,
+			
 			seller_id: stateCarts.filter((item) => item.selected === true)[0]
 				.seller_id,
 			amount: stateCarts
@@ -255,9 +255,9 @@ const MyBag = () => {
 												"text-title text-right"
 											)}
 										>
-											{`Rp${(
+											{`${(
 												item.price * item.qty
-											).toLocaleString("id-ID")}`}
+											).toLocaleString("id-ID")}VND`}
 										</p>
 									</div>
 								</div>
@@ -294,7 +294,7 @@ const MyBag = () => {
 											"text-title text-right"
 										)}
 									>
-										Rp
+										
 										{stateCarts
 											.filter(
 												(item) => item.selected === true

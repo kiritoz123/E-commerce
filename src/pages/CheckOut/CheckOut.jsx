@@ -44,23 +44,7 @@ const CheckOut = (props) => {
 
    const joinedAdrress = `${stateAuth.address}, ${stateAuth.city_of_subdistrict}, ${stateAuth.postal_code}, ${stateAuth.recipient_telp_number}`;
 
-   // let invoice = Math.floor(Math.random() * 100001) + 1;
-   // const [dataTransaction, setDataTransaction] = useState(
-   //    {
-   //       "id": invoice,
-   //       "customer_id": user.id,
-   //       "seller_id": 1,
-   //       "amount": cart.reduce((total, item) => { return total + (item.price * item.qty) }, 5),
-   //       "payment_method": "",
-   //       "address": user.address,
-   //       "products": cart.map(item => {
-   //          return {
-   //             id: item.id,
-   //             qty: item.qty
-   //          }
-   //       }),
-   //    }
-   // );
+   
 
    useEffect(() => {
       document.title = "Checkout | Blanja";
@@ -119,7 +103,7 @@ const CheckOut = (props) => {
                            </div>
                            <div className="col-2">
                               <p href="#" className={classname(text.text, colors.blackText, "text-title text-right")}>
-                                 {`Rp${(item.price * item.qty).toLocaleString('id-ID')}`}
+                                 {`${(item.price * item.qty).toLocaleString('id-ID')}VND`}
                               </p>
                            </div>
                         </div>
@@ -137,8 +121,8 @@ const CheckOut = (props) => {
                            <p className={classname(text.text, colors.grayText, "text-title")}>Delivery</p>
                         </div>
                         <div className="col">
-                           <p className={classname(text.headline3, "text-title text-right")}>{`Rp${stateCarts.filter(item => item.selected === true).reduce((total, item) => { return total + (item.price * item.qty) }, 0).toLocaleString('id-ID')}`}</p>
-                           <p className={classname(text.headline3, "text-title text-right")}>Rp5.000</p>
+                           <p className={classname(text.headline3, "text-title text-right")}>{`${stateCarts.filter(item => item.selected === true).reduce((total, item) => { return total + (item.price * item.qty) }, 0).toLocaleString('id-ID')}VND`}</p>
+                           <p className={classname(text.headline3, "text-title text-right")}>5.000VND</p>
                         </div>
                      </div>
                      <div className="row">
@@ -146,7 +130,7 @@ const CheckOut = (props) => {
                            <p className={classname(text.text, "text-title mb-5")}>Shopping summary</p>
                         </div>
                         <div className="col">
-                           <p className={classname(text.headline3, colors.primaryText, "text-title text-right")}>{`Rp${stateCarts.filter(item => item.selected === true).reduce((total, item) => { return total + (item.price * item.qty) }, 5000).toLocaleString('id-ID')}`}</p>
+                           <p className={classname(text.headline3, colors.primaryText, "text-title text-right")}>{`${stateCarts.filter(item => item.selected === true).reduce((total, item) => { return total + (item.price * item.qty) }, 5000).toLocaleString('id-ID')}VND`}</p>
                         </div>
                      </div>
                      <button className={classname("btn btn-danger btn-buy", colors.primary)} onClick={() => setShowPayment(true)}>Select payment</button>

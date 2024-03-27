@@ -55,50 +55,52 @@ const Home = (props) => {
 					history={props.history}
 				/>
 			</div>
-			<h1 className={text.headline}>New</h1>
-			<p className={classname(text.helperText, styles.marginbottom30)}>
-				You’ve never seen it before!
-			</p>
-			<div className="w-100">
-				<div
-					className={classname(
-						styles.marginbottom50,
-						"row",
-						"no-gutters"
-					)}
-				>
-					{stateProduct.map((item) => {
-						return (
-							<Card
-								key={item.id}
-								{...item}
-								onClickProp={onClickHandler}
-							/>
-						);
-					})}
+			<div>
+				<h1 className={text.headline}>New</h1>
+				<p className={classname(text.helperText, styles.marginbottom30)}>
+					You’ve never seen it before!
+				</p>
+				<div className="w-100">
+					<div
+						className={classname(
+							styles.marginbottom50,
+							"row",
+							"no-gutters"
+						)}
+					>
+						{stateProduct.map((item) => {
+							return (
+								<Card
+									key={item.id}
+									{...item}
+									onClickProp={onClickHandler}
+								/>
+							);
+						})}
+					</div>
 				</div>
-			</div>
-			<h1 className={text.headline}>Popular</h1>
-			<p className={classname(text.helperText, styles.marginbottom30)}>
-				Find clothes that are trending recently
-			</p>
-			<div className="w-100">
-				<div
-					className={classname(
-						"row",
-						"no-gutters",
-						"d-flex flex-row"
-					)}
-				>
-					{stateProduct.map((item) => {
-						return (
-							<Card
-								key={item.id}
-								{...item}
-								onClickProp={onClickHandler}
-							/>
-						);
-					})}
+				<h1 className={text.headline}>Popular</h1>
+				<p className={classname(text.helperText, styles.marginbottom30)}>
+					Find clothes that are trending recently
+				</p>
+				<div className="w-100">
+					<div
+						className={classname(
+							"row",
+							"no-gutters",
+							"d-flex flex-row"
+						)}
+					>
+						{stateProduct.map((item) => {
+							return (
+								<Card
+									key={item.id}
+									{...item}
+									onClickProp={onClickHandler}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</main>

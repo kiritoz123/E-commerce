@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Okt 2020 pada 06.31
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.4.7
+-- Generation Time: Mar 22, 2024 at 05:14 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `address`
+-- Table structure for table `address`
 --
 
 CREATE TABLE `address` (
@@ -35,28 +35,50 @@ CREATE TABLE `address` (
   `city_of_subdistrict` varchar(255) DEFAULT NULL,
   `recipient_telp_number` varchar(255) DEFAULT NULL,
   `postal_code` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `address`
+-- Dumping data for table `address`
 --
 
 INSERT INTO `address` (`user_id`, `save_address`, `recipient_name`, `address`, `city_of_subdistrict`, `recipient_telp_number`, `postal_code`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `category`
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
+(1, 'abcdfff', '', ''),
+(1, 'a', 'abc@gmail.com', '$2b$10$UXZ2ua.xk/1gmMsYgWJ.meUDPFS0jKdUNgGYMOllfwjjInGZbjcY2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category`) VALUES
@@ -80,7 +102,7 @@ INSERT INTO `category` (`category_id`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -92,19 +114,20 @@ CREATE TABLE `customer` (
   `phone_number` varchar(255) DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
   `dob` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `name`, `email`, `password`, `avatar`, `phone_number`, `gender`, `dob`) VALUES
-(1, 'Taufiq Widi', 'taufiq@gmail.com', '$2b$10$67sp9DLaRRk9DMloFYMOJ.CVugMVhbNCyNKp8ql.hfjnn1jwacska', NULL, NULL, NULL, NULL);
+(1, 'Taufiq Widi', 'taufiq@gmail.com', '$2b$10$67sp9DLaRRk9DMloFYMOJ.CVugMVhbNCyNKp8ql.hfjnn1jwacska', NULL, NULL, NULL, NULL),
+(2, 'abc123', 'doduc2003uet@gmail.com', '$2b$10$lQvzDaClStM7LISNwzea/.DozsADnHJSpJRZFuIP8DCuXBXXJY6iy', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -118,10 +141,10 @@ CREATE TABLE `product` (
   `status` varchar(255) DEFAULT NULL,
   `description` varchar(2000) DEFAULT NULL,
   `added_at` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `seller_id`, `name`, `brand`, `price`, `category_id`, `qty`, `status`, `description`, `added_at`) VALUES
@@ -150,16 +173,16 @@ INSERT INTO `product` (`id`, `seller_id`, `name`, `brand`, `price`, `category_id
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `product_img`
+-- Table structure for table `product_img`
 --
 
 CREATE TABLE `product_img` (
   `product_id` int(11) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `product_img`
+-- Dumping data for table `product_img`
 --
 
 INSERT INTO `product_img` (`product_id`, `img`) VALUES
@@ -248,7 +271,7 @@ INSERT INTO `product_img` (`product_id`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `seller`
+-- Table structure for table `seller`
 --
 
 CREATE TABLE `seller` (
@@ -260,19 +283,20 @@ CREATE TABLE `seller` (
   `password` varchar(255) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `store_desc` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `seller`
+-- Dumping data for table `seller`
 --
 
 INSERT INTO `seller` (`id`, `name`, `email`, `phone_number`, `store_name`, `password`, `avatar`, `store_desc`) VALUES
-(1, 'Bang Best', 'best@gmail.com', '0819687277777', 'Best Sport', '$2b$10$Cvfii6x8KIMU9r2Ldk6wl.q4PCEApNknKlR2N5b2oKup8cbVW/wEm', NULL, NULL);
+(1, 'Bang Best', 'best@gmail.com', '0819687277777', 'Best Sport', '$2b$10$UXZ2ua.xk/1gmMsYgWJ.meUDPFS0jKdUNgGYMOllfwjjInGZbjcY2', NULL, NULL),
+(2, 'aba', 'abca@gmail.com', '222222222', 'duc', '$2b$10$UXZ2ua.xk/1gmMsYgWJ.meUDPFS0jKdUNgGYMOllfwjjInGZbjcY2', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaction`
+-- Table structure for table `transaction`
 --
 
 CREATE TABLE `transaction` (
@@ -283,63 +307,65 @@ CREATE TABLE `transaction` (
   `payment_method` varchar(255) DEFAULT NULL,
   `address` text DEFAULT NULL,
   `date` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `transaction`
+-- Dumping data for table `transaction`
 --
 
 INSERT INTO `transaction` (`id`, `customer_id`, `seller_id`, `amount`, `payment_method`, `address`, `date`) VALUES
+(76573, 1, 1, '1005000', 'mastercard', 'undefined, undefined, undefined, undefined', '2024-03-20 10:30:27'),
 (123456, 1, 1, '20000', 'visa', 'your heart', '2020-10-13 17:00:00'),
 (199825, 1, 1, '20000', 'visa', 'your heart', '2020-10-13 17:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trans_pvt`
+-- Table structure for table `trans_pvt`
 --
 
 CREATE TABLE `trans_pvt` (
   `transaction_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
   `qty` int(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `trans_pvt`
+-- Dumping data for table `trans_pvt`
 --
 
 INSERT INTO `trans_pvt` (`transaction_id`, `product_id`, `qty`) VALUES
 (123456, NULL, 2),
 (123456, NULL, 6),
 (199825, NULL, 2),
-(199825, NULL, 6);
+(199825, NULL, 6),
+(76573, 23, 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `address`
+-- Indexes for table `address`
 --
 ALTER TABLE `address`
   ADD KEY `id` (`user_id`);
 
 --
--- Indeks untuk tabel `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indeks untuk tabel `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indeks untuk tabel `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
@@ -347,20 +373,20 @@ ALTER TABLE `product`
   ADD KEY `seller_id` (`seller_id`);
 
 --
--- Indeks untuk tabel `product_img`
+-- Indexes for table `product_img`
 --
 ALTER TABLE `product_img`
   ADD KEY `id` (`product_id`);
 
 --
--- Indeks untuk tabel `seller`
+-- Indexes for table `seller`
 --
 ALTER TABLE `seller`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indeks untuk tabel `transaction`
+-- Indexes for table `transaction`
 --
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`id`),
@@ -368,78 +394,78 @@ ALTER TABLE `transaction`
   ADD KEY `seller_id` (`seller_id`);
 
 --
--- Indeks untuk tabel `trans_pvt`
+-- Indexes for table `trans_pvt`
 --
 ALTER TABLE `trans_pvt`
   ADD KEY `transaction_id` (`transaction_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT untuk tabel `customer`
+-- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT untuk tabel `seller`
+-- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `transaction`
+-- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199826;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `address`
+-- Constraints for table `address`
 --
 ALTER TABLE `address`
   ADD CONSTRAINT `address_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `customer` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `product_img`
+-- Constraints for table `product_img`
 --
 ALTER TABLE `product_img`
   ADD CONSTRAINT `product_img_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `transaction`
+-- Constraints for table `transaction`
 --
 ALTER TABLE `transaction`
   ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `trans_pvt`
+-- Constraints for table `trans_pvt`
 --
 ALTER TABLE `trans_pvt`
   ADD CONSTRAINT `trans_pvt_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,

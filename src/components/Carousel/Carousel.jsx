@@ -32,32 +32,31 @@ const colors = [
 ];
 
 const CustomLeftArrow = (props) => {
-	const { className, style, onClick } = props;
-	return (
-		<Img
-			key="leftarrow"
-			style={style}
-			containerStyle={classname(className, styles.arrowLeft)}
-			imgStyle={styles.arrowImg}
-			onClick={onClick}
-			source={leftArrow}
-		/>
-	);
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={classname(className, styles.arrowLeft)}
+            style={{ ...style, display: 'block' }}
+            onClick={onClick}
+        >
+            <img src={leftArrow} className={styles.arrowImg} alt="Prev"/>
+        </div>
+    );
 };
 
 const CustomRightArrow = (props) => {
-	const { className, style, onClick } = props;
-	return (
-		<Img
-			key="rightarrow"
-			style={{ ...style }}
-			containerStyle={classname(className, styles.arrowRight)}
-			imgStyle={styles.arrowImg}
-			onClick={onClick}
-			source={rigthArrow}
-		/>
-	);
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={classname(className, styles.arrowRight)}
+            style={{ ...style, display: 'block' }}
+            onClick={onClick}
+        >
+            <img src={rigthArrow} className={styles.arrowImg} alt="Next"/>
+        </div>
+    );
 };
+
 
 const PreviewItem = (props) => {
 	return (
@@ -108,7 +107,7 @@ const getSettingsPreview = (width) => {
 		slidesToShow: 3,
 		speed: 500,
 		autoplay: true,
-		nextArrow: <CustomRightArrow /> ,
+		nextArrow: <CustomRightArrow />,
 		prevArrow: <CustomLeftArrow />,
 		arrows: true,
 		dots: true,
@@ -138,12 +137,13 @@ const getSettingsPreview = (width) => {
 const settingsCategory = (width) => {
 	const centerPadding = Math.round(0.44 * width - 300);
 	return {
-		speed: 500,
+		speed: 800,
 		infinite: true,
 		className: "center",
 		centerMode: true,
 		centerPadding: `${centerPadding}px`,
 		slidesToShow: 2,
+		autoplay : true,
 		swipeToSlide: true,
 		nextArrow: <CustomRightArrow />,
 		prevArrow: <CustomLeftArrow />,

@@ -201,10 +201,10 @@ const PageProduct = (props) => {
 									marginTop: 10,
 								}}
 							>
-								Rp
+								
 								{Number(
 									stateProductDetail.price
-								).toLocaleString("id-ID")}
+								).toLocaleString("id-ID")} VND
 							</p>
 							<p
 								style={{
@@ -249,25 +249,29 @@ const PageProduct = (props) => {
 							<div className={classname(styles.sizeQtyActCont)}>
 								<button
 									className={classname(styles.sizeQtyBtn)}
+									style={{ marginRight: 10 }}
 								>
 									<p
 										style={{
-											fontSize: 50,
-											marginTop: -20.5,
+											fontSize: 15,
+											marginBottom: 0
 										}}
 									>
-										-
+										X
 									</p>
 								</button>
-								<p
-									style={{
-										marginTop: 5,
-										fontSize: 16,
-										marginLeft: 10,
-									}}
+								<button
+									className={classname(styles.sizeQtyBtn)}
 								>
-									28
-								</p>
+									<p
+										style={{
+											fontSize: 15,
+											marginBottom: 0
+										}}
+									>
+										M
+									</p>
+								</button>
 
 								<button
 									className={classname(styles.sizeQtyBtn)}
@@ -275,11 +279,11 @@ const PageProduct = (props) => {
 								>
 									<p
 										style={{
-											fontSize: 30,
-											marginTop: -3.5,
+											fontSize: 15,
+											marginBottom: 0
 										}}
 									>
-										+
+										L
 									</p>
 								</button>
 								<button
