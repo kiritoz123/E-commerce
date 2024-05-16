@@ -1,3 +1,4 @@
+
 const productModel = require("../Models/product");
 const formResponse = require("../Helpers/Forms/formResponse");
 const { DateTime } = require("luxon");
@@ -35,7 +36,27 @@ const productController = {
 	},
 	getProductByAdminId: function (req, res) {
 		productModel
-			.getProductBySellerId(req.params.id)
+			.getProductByAdminId(req.params.id)
+			.then((data) => {
+				formResponse.success(res, data);
+			})
+			.catch((err) => {
+				formResponse.error(res, err);
+			});
+	},
+	getCustomerByAdminId: function (req, res) {
+		productModel
+			.getCustomerByAdminId(req.params.id)
+			.then((data) => {
+				formResponse.success(res, data);
+			})
+			.catch((err) => {
+				formResponse.error(res, err);
+			});
+	},
+	getSellerByAdminId: function (req, res) {
+		productModel
+			.getSellerByAdminId(req.params.id)
 			.then((data) => {
 				formResponse.success(res, data);
 			})

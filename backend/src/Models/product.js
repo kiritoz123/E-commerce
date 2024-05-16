@@ -1,3 +1,4 @@
+
 const { reject } = require("lodash");
 const db = require("../Configs/dbMysql");
 
@@ -103,6 +104,30 @@ const productModel = {
 	getProductByAdminId: function (id) {
 		const queryString =
 		"SELECT product.id, product.name, brand, price,qty,status,description,added_at FROM product WHERE 1";
+		return new Promise((resolve, reject) => {
+			db.query(queryString, [id], (err, data) => {
+				if (err) {
+					reject(err);
+				}
+				resolve(this.alignHelper(data));
+			});
+		});
+	},
+	getCustomerByAdminId: function (id) {
+		const queryString =
+		"SELECT customer.id,customer.name as price,email as name,password as qty FROM `customer` WHERE 1";
+		return new Promise((resolve, reject) => {
+			db.query(queryString, [id], (err, data) => {
+				if (err) {
+					reject(err);
+				}
+				resolve(this.alignHelper(data));
+			});
+		});
+	},
+	getSellerByAdminId: function (id) {
+		const queryString =
+		"SELECT seller.id,seller.name as price,email as name,password as qty FROM `seller` WHERE 1";
 		return new Promise((resolve, reject) => {
 			db.query(queryString, [id], (err, data) => {
 				if (err) {

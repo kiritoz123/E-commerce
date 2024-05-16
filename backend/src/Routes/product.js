@@ -14,6 +14,14 @@ productRouter.get(
 	"/admin/:id",
 	productController.getProductByAdminId
 );
+productRouter.get(
+	"/admincus/:id",
+	productController.getCustomerByAdminId
+);
+productRouter.get(
+	"/adminsel/:id",
+	productController.getSellerByAdminId
+);
 productRouter.post("/", imgUpload.multiUpload, productController.addNewProduct);
 productRouter.patch(
 	"/:id",
