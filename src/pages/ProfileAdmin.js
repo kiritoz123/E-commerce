@@ -16,11 +16,10 @@ export default function ProfileAdmin() {
         <LeftBar
           nav={nav}
           setEdit={() => setEdit(!edit)}
-          setNav1={() => setNav("storeprofile")}
+          setNav3={() => setNav("AdminCustomer")}
+          setNav5={() => setNav("AdminSeller")}
           setNav2={() => setNav("myproduct")}
-          setNav3={() => setNav("selingproduct")}
           setNav4={() => setNav("myorder")}
-          setNav5={() => setNav("ordercancel")}
           onShow={() => setLogout(true)}
         />
         <Main nav={nav} edit={edit} setEdit={() => setEdit(false)} />

@@ -4,6 +4,8 @@ import styles from "./leftbar.module.css";
 import userDefault from "../../assets/img/default.png";
 import { Accordion, Card } from "react-bootstrap";
 import {
+  getSellerByAdminIdCreator,
+  getCustomerByAdminIdCreator,
   getProductByAdminIdCreator,
   getOrderAdminCreator,
 } from "../../redux/actions/product";
@@ -52,6 +54,92 @@ export default function LeftBar(props) {
         </div>
 
         <Accordion defaultActiveKey='0'>
+        <Card
+            style={{
+              backgroundColor: "#ffffff",
+              border: "none",
+            }}>
+            <Accordion.Toggle
+              onClick={() => {
+                setNav3();
+                setArrow({
+                  store: false,
+                  product: !arrow.product,
+                  order: false,
+                });
+                dispatch(getCustomerByAdminIdCreator(Number(user.id)));
+              }}
+              as={Card.Header}
+              eventKey='1'
+              style={{
+                padding: 0,
+                display: "flex",
+                alignItems: "center",
+                border: "none",
+                backgroundColor: "#ffffff",
+                cursor: "pointer",
+                flexDirection: "row",
+              }}>
+              <span className='fa-stack fa-lg' style={{ flex: 1 }}>
+                <i
+                  className='fa fa-circle fa-stack-2x'
+                  style={{ color: "#F36F45" }}></i>
+                <i className='fa fa-cube fa-stack-1x fa-inverse'></i>
+              </span>
+              <p
+                style={{ flex: 5 }}
+                className={
+                  nav === "AdminCustomer" || nav === "selingproduct"
+                    ? styles.active
+                    : styles.inactive
+                }>
+                Customer
+              </p>
+            </Accordion.Toggle>
+          </Card>
+          <Card
+            style={{
+              backgroundColor: "#ffffff",
+              border: "none",
+            }}>
+            <Accordion.Toggle
+              onClick={() => {
+                setNav5();
+                setArrow({
+                  store: false,
+                  product: !arrow.product,
+                  order: false,
+                });
+                dispatch(getSellerByAdminIdCreator(Number(user.id)));
+              }}
+              as={Card.Header}
+              eventKey='1'
+              style={{
+                padding: 0,
+                display: "flex",
+                alignItems: "center",
+                border: "none",
+                backgroundColor: "#ffffff",
+                cursor: "pointer",
+                flexDirection: "row",
+              }}>
+              <span className='fa-stack fa-lg' style={{ flex: 1 }}>
+                <i
+                  className='fa fa-circle fa-stack-2x'
+                  style={{ color: "#F36F45" }}></i>
+                <i className='fa fa-cube fa-stack-1x fa-inverse'></i>
+              </span>
+              <p
+                style={{ flex: 5 }}
+                className={
+                  nav === "AdminSeller" || nav === "selingproduct"
+                    ? styles.active
+                    : styles.inactive
+                }>
+                Seller
+              </p>
+            </Accordion.Toggle>
+          </Card>
           <Card
             style={{
               backgroundColor: "#ffffff",
@@ -137,19 +225,6 @@ export default function LeftBar(props) {
                 }>
                 Order
               </p>
-              <p className={styles.containerArrow}>
-                {arrow.order ? (
-                  <i
-                    className='fa fa-chevron-up'
-                    style={{ color: "#222222" }}
-                    aria-hidden='true'></i>
-                ) : (
-                  <i
-                    className='fa fa-chevron-down'
-                    style={{ color: "#9b9b9b" }}
-                    aria-hidden='true'></i>
-                )}
-              </p>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey='2'>
               <Card.Body
@@ -161,20 +236,6 @@ export default function LeftBar(props) {
                   paddingBottom: 0,
                   cursor: "pointer",
                 }}>
-                <p
-                  onClick={setNav4}
-                  className={
-                    nav === "myorder" ? styles.active : styles.inactive
-                  }>
-                  All order
-                </p>
-                <p
-                  onClick={setNav5}
-                  className={
-                    nav === "ordercancel" ? styles.active : styles.inactive
-                  }>
-                  Order cancel
-                </p>
               </Card.Body>
             </Accordion.Collapse>
           </Card>

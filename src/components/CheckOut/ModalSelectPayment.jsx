@@ -5,7 +5,7 @@ import text from '../../assets/text.module.css';
 import classname from '../../helpers/classJoiner';
 import './ModalSelectPayment.css';
 
-import gopay from '../../assets/img/logo-gopay.png';
+import gopay from '../../assets/img/lg.png';
 import pos from '../../assets/img/logo-pos.png';
 import mastercard from '../../assets/img/logo-mastercard.png';
 
@@ -29,14 +29,10 @@ const ModalSelectPayment = (props) => {
                </div>
                <div className="row align-items-center container-item-payment">
                   <img src={gopay} alt="" />
-                  <h4 className="text-item-payment">Gopay</h4>
+                  <h4 className="text-item-payment">MoMo</h4>
                   <input type="radio" name="payment" id="gopay" value="gopay" onChange={props.handleSelectPayment} className="ml-auto" />
                </div>
-               <div className="row align-items-center container-item-payment">
-                  <img src={pos} alt="" />
-                  <h4 className="text-item-payment">Pos Indonesia</h4>
-                  <input type="radio" name="payment" id="pos" value="pos" onChange={props.handleSelectPayment} className="ml-auto" />
-               </div>
+               
                <div className="row align-items-center container-item-payment">
                   <img src={mastercard} alt="" />
                   <h4 className="text-item-payment">Mastercard</h4>

@@ -53,7 +53,7 @@ export default function MyProduct() {
                     return (
                       <tr key={index.toString()}>
                         <td>{item.name}</td>
-                        <td>Rp{formatRupiah(Number(item.price))}</td>
+                        <td>{formatRupiah(Number(item.price))}VND</td>
                         <td style={{ textAlign: "center" }}>{item.qty}</td>
                       </tr>
                     );

@@ -81,6 +81,12 @@ export const getProductBySellerId = (id) => {
 export const getProductByAdminId = (id) => {
   return Axios.get(`${API_URL}/product/admin/${id}`);
 };
+export const getCustomerByAdminId = (id) => {
+  return Axios.get(`${API_URL}/product/admincus/${id}`);
+};
+export const getSellerByAdminId = (id) => {
+  return Axios.get(`${API_URL}/product/adminsel/${id}`);
+};
 export const syncFromServer = (id) => {
   return Axios.get(`${API_URL}/chat/${id}`);
 };

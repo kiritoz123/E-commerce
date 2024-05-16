@@ -1,3 +1,4 @@
+
 import * as actions from "./actionTypes";
 import * as api from "../../utils/reqData";
 import { createAsyncAction } from "redux-promise-middleware-actions";
@@ -34,6 +35,20 @@ export const getProductByAdminIdCreator = createAsyncAction(
   "GETPRODUCT_BY_ADMIN_ID",
   async (id) => {
     const res = await api.getProductByAdminId(id);
+    return res.data;
+  }
+);
+export const getCustomerByAdminIdCreator = createAsyncAction(
+  "GETCUSTOMER_BY_ADMIN_ID",
+  async (id) => {
+    const res = await api.getCustomerByAdminId(id);
+    return res.data;
+  }
+);
+export const getSellerByAdminIdCreator = createAsyncAction(
+  "GETSELLER_BY_ADMIN_ID",
+  async (id) => {
+    const res = await api.getSellerByAdminId(id);
     return res.data;
   }
 );

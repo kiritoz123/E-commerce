@@ -1,5 +1,8 @@
+
 import * as actions from "../actions/actionTypes";
 import {
+  getSellerByAdminIdCreator,
+  getCustomerByAdminIdCreator,
   getProductByAdminIdCreator,
   getProductBySellerIdCreator,
   addProductCreator,
@@ -41,6 +44,20 @@ const initialState = {
   isGetProdByAdminIdPending: false,
   isGetProdByAdminIdFulFilled: false,
   isGetProdByAdminIdRejected: false,
+
+  statusGetCusByAdminId: null,
+  dataGetCusByAdminId: null,
+  errorGetCusByAdminId: undefined,
+  isGetCusByAdminIdPending: false,
+  isGetCusByAdminIdFulFilled: false,
+  isGetCusByAdminIdRejected: false,
+
+  statusGetSelByAdminId: null,
+  dataGetSelByAdminId: null,
+  errorGetSelByAdminId: undefined,
+  isGetSelByAdminIdPending: false,
+  isGetSelByAdminIdFulFilled: false,
+  isGetSelByAdminIdRejected: false,
 
   statusAddProd: null,
   dataAddProd: null,
@@ -313,6 +330,80 @@ const productReducer = (state = initialState, { type, payload }) => {
           isGetProdByAdminIdPending: false,
           isGetProdByAdminIdFulFilled: false,
         };
+    case String(getCustomerByAdminIdCreator.pending):
+          return {
+            ...state,
+            isGetCusByAdminIdPending: true,
+          };
+   case String(getCustomerByAdminIdCreator.fulfilled): {
+          let status;
+          let err;
+          let data;
+          if (payload.status === 200) {
+            status = 200;
+            err = undefined;
+            data = payload.data;
+          } else {
+            status = 500;
+            err = payload.error;
+            data = [];
+          }
+          return {
+            ...state,
+            statusGetCusByAdminId: status,
+            dataGetCusByAdminId: data,
+            errorGetCusByAdminId: err,
+            isGetCusByAdminIdPending: false,
+            isGetCusByAdminIdFulFilled: true,
+            isGetCusByAdminIdRejected: false,
+          };
+        }
+      case String(getCustomerByAdminIdCreator.rejected):
+          return {
+            ...state,
+            statusGetCusByAdminId: 500,
+            errorGetCusByAdminId: payload,
+            isGetCusByAdminIdRejected: true,
+            isGetCusByAdminIdPending: false,
+            isGetCusByAdminIdFulFilled: false,
+          };
+          case String(getSellerByAdminIdCreator.pending):
+          return {
+            ...state,
+            isGetSelByAdminIdPending: true,
+          };
+   case String(getSellerByAdminIdCreator.fulfilled): {
+          let status;
+          let err;
+          let data;
+          if (payload.status === 200) {
+            status = 200;
+            err = undefined;
+            data = payload.data;
+          } else {
+            status = 500;
+            err = payload.error;
+            data = [];
+          }
+          return {
+            ...state,
+            statusGetSelByAdminId: status,
+            dataGetSelByAdminId: data,
+            errorGetSelByAdminId: err,
+            isGetSelByAdminIdPending: false,
+            isGetSelByAdminIdFulFilled: true,
+            isGetSelByAdminIdRejected: false,
+          };
+        }
+      case String(getSellerByAdminIdCreator.rejected):
+          return {
+            ...state,
+            statusGetSelByAdminId: 500,
+            errorGetSelByAdminId: payload,
+            isGetSelByAdminIdRejected: true,
+            isGetSelByAdminIdPending: false,
+            isGetSelByAdminIdFulFilled: false,
+          };
     case String(addProductCreator.pending):
       return {
         ...state,
