@@ -72,17 +72,11 @@ REACT_APP_WEB_URL = "http://localhost:3000"
 
 <div align="center">
     <img width="100%" src="./src/assets/image/screenshoot1.png">
-    <img width="100%" src="./src/assets/image/screenshoot2.png">
+   
     <img width="100%" src="./src/assets/image/screenshoot3.png">
 </div>
 
-## Demo Blanja Web
 
-This is Blanja Web build version, let's try it.
-
-<a href="http://54.175.146.137:3000/">
-  <img src="https://img.shields.io/badge/Blanja%20Web-Link%20Demo-blue.svg?style=popout&logo=firefox"/>
-</a>
 
 ## Related Project
 
