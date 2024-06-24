@@ -72,7 +72,6 @@ REACT_APP_WEB_URL = "http://localhost:3000"
 
 <div align="center">
     <img width="100%" src="./src/assets/image/screenshoot1.png">
-   
     <img width="100%" src="./src/assets/image/screenshoot3.png">
 </div>
 
